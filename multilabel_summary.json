@@ -1,0 +1,14 @@
+{
+  "input": "C:\\Users\\d7000ko\\Desktop\\Python\\KITTI-distance-estimation\\annotations.csv",
+  "output": "C:\\Users\\d7000ko\\Desktop\\Python\\KITTI-distance-estimation\\multilabel_annotations.csv",
+  "n_images": 7481,
+  "n_non_vulnerable_present": 6434,
+  "n_non_vulnerable_nearby": 3148,
+  "n_vulnerable_present": 2366,
+  "n_vulnerable_nearby": 1331,
+  "n_crowded_critical": 934,
+  "z_threshold": 15.0,
+  "bbox_height_threshold": 25.0,
+  "max_truncation": 0.5,
+  "max_occluded": 3
+}

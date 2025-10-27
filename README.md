@@ -1,3 +1,21 @@
+## Purpose of fork
+Added a script to generate a simple multi-label classification dataset from Kitti-distance-estimation. 
+Binary labels are extracted for the following image properties:
+
+- non_vulnerable_present: any Car/Van/Truck/Tram present
+- non_vulnerable_nearby: any Car/Van/Truck/Tram with zloc <= threshold
+- vulnerable_present: any Pedestrian/Person_sitting/Cyclist present
+- vulnerable_nearby: any Pedestrian/Person_sitting/Cyclist with zloc <= threshold
+- crowded_critical: 3 or more objects (any of the considered classes) with zloc <= threshold
+
+All objects must fulfill the original Kitti 2D object detection benchmark criteria:
+"Hard: Min. bounding box height: 25 Px, Max. occlusion level: Difficult to see, Max. truncation: 50 %"
+
+Note that the threshold for the feature "nearby" is set to 15m. This is mostly arbitrary and should not represent a notion of criticality or the like. Rather, the threshold represents a proxy meta-feature that the vision model is asked to learn. 
+
+The result is a multilabel dataset that models can be trained on with a multi-label objective. 
+Advantageously, it works with standard classification models, and concepts such as robustness (class change under image corruption) are formally defined in this classification setting. 
+
 ## Purpose
 To estimate distance to objects (cars, pedestrians, trucks) in the scene on the basis of detection information
 
